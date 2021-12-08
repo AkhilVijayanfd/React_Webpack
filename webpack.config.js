@@ -33,8 +33,8 @@ module.exports = {
     },
     Plugins: [
         new HtmlWebpackPlugin({
-            template:"./app/index.html",
-            filename:'index.html',
+            template:"/app/index.html",
+            filename:'/app/index.html',
         }),
     ],
 };
