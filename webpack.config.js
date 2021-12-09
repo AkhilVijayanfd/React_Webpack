@@ -1,5 +1,5 @@
-const path = require("path")
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry:"/app/index.js",
     mode: "development",
@@ -7,34 +7,41 @@ module.exports = {
          filename: 'bundle.js',
          path: path.resolve(__dirname, "dist")},
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        open: true,
-        port: 3010,
+        static:{
+        directory: path.join(__dirname, "dist"),
+        },
+        compress: true,
+        port: 3011,
+
+    },
+    performance:{
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
 
     },
     module: {
         rules: [
             {
-                test: /\.css$/i,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ["style-loader", "css-loader"],
-            },
-            {
-                test: /\.(js)$/,
                 use: {
 
                  loader:"babel-loader",
                  options: {
                      presets: ["@babel/preset-env", "@babel/preset-react"],
                  },
-            }
+            },
+        },
+        {
+            test: /\.css$/i,
+            use: ["style-loader","css-loader"],
         }
     ]
     },
-    Plugins: [
-        new HtmlWebpackPlugin({
-            template:"/app/index.html",
-            filename:'/app/index.html',
+    plugins: [
+        new HtmlWebPackPlugin({
+            template:"./app/index.html",
         }),
     ],
 };

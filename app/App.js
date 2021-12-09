@@ -1,10 +1,14 @@
+
 import React from "react";
 
-function App(){
-    return(
-        <div className="first"> 
+function App()
+{
+return(
+    <div className="first">
         <label>Name: Akhil Vijayan</label>
-        </div>
+        <label>Place: Palode</label>
+    </div>
     );
 }
+
 export default App;
