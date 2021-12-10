@@ -11,7 +11,7 @@ module.exports = {
         directory: path.join(__dirname, "dist"),
         },
         compress: true,
-        port: 3011,
+        port: 3013,
 
     },
     performance:{
