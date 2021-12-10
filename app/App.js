@@ -1,10 +1,15 @@
-import React from "react";
 
-function App(){
-    return(
-        <div className="first"> 
+import React from "react";
+import "./App.css";
+function App()
+{
+return(
+    <div className="first">
         <label>Name: Akhil Vijayan</label>
-        </div>
+        <br></br>
+        <label>Place: Palode</label>
+    </div>
     );
 }
+
 export default App;
