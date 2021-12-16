@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -19,7 +20,9 @@ module.exports = {
     ],
     "rules": {
         "semi" : ["error", "always"],
-        "quotes": ["error", "double"]
+        "quotes": ["error", "double"],
+        "no-console": "warn",
+        "import/first": "error"
     },
     "settings":{
         "react": {

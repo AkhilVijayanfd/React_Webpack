@@ -8,7 +8,13 @@ return(
         <label>Name: Akhil Vijayan</label>
         <br></br>
         <label>Place: Palode</label>
+
+        <div className="second">
+            <h2> Home Component </h2>
+        </div>
+
     </div>
+   
     );
 }
 
