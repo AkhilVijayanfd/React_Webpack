@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
-    entry:"/app/index.js",
+    entry:"/src/index.tsx",
     mode: "development",
     output: {
          filename: 'bundle.js',
@@ -11,7 +11,7 @@ module.exports = {
         directory: path.join(__dirname, "dist"),
         },
         compress: true,
-        port: 3013,
+        port: 3016,
 
     },
     performance:{
@@ -36,7 +36,12 @@ module.exports = {
         {
             test: /\.css$/i,
             use: ["style-loader","css-loader"],
-        }
+        },
+        {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            include: [path.resolve(__dirname, 'src')]
+          }
     ]
     },
     plugins: [
