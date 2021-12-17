@@ -21,8 +21,7 @@ module.exports = {
     "rules": {
         "semi" : ["error", "always"],
         "quotes": ["error", "double"],
-        "no-console": "warn",
-        "import/first": "error"
+        "no-console": "warn"
     },
     "settings":{
         "react": {
