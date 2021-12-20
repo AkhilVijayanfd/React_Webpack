@@ -1,7 +1,8 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
-    entry:"/src/index.tsx",
+    entry: './src/index.tsx',
+    devtool: 'inline-source-map',
     mode: "development",
     output: {
          filename: 'bundle.js',
@@ -11,7 +12,7 @@ module.exports = {
         directory: path.join(__dirname, "dist"),
         },
         compress: true,
-        port: 3016,
+        port: 3023,
 
     },
     performance:{
@@ -29,7 +30,7 @@ module.exports = {
 
                  loader:"babel-loader",
                  options: {
-                     presets: ["@babel/preset-env", "@babel/preset-react"],
+                     presets: ["@babel/preset-env", "@babel/preset-react","@babel/preset-typescript"],
                  },
             },
         },
@@ -40,13 +41,18 @@ module.exports = {
         {
             test: /\.tsx?$/,
             use: 'ts-loader',
-            include: [path.resolve(__dirname, 'src')]
+            exclude: /node_modules/
+
           }
     ]
     },
+    resolve: {
+        extensions: ['.tsx','.ts','.js',],
+
+    },
     plugins: [
         new HtmlWebPackPlugin({
-            template:"./app/index.html",
+            template:"./src/index.html",
         }),
     ],
 };

@@ -1,15 +1,16 @@
 {
     "compilerOptions": {
+        "jsx": "react",
         "module":"commonjs",
-        "target": "ES3",
+        "target": "es5",
         "sourceMap": true,
         "outDir": "./dist/",
-        "noImplicitAny":true
+        "noImplicitAny":true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "moduleResolution": "node",
     },
-    "exclude": [
-        "node_modules"
-    ],
-    "include":[
-        "./src/*"
-    ]
+    "include": ["src"],
+    "exclude": ["node_modues"]
 }

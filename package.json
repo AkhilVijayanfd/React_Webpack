@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "ts-loader": "^9.2.6",
